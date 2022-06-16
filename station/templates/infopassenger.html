@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html align="center">
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("A4.jpg");
+
+    }
+
+    .aaa {
+      background: #333;
+      color: #fff;
+      font-size: 20px;
+      padding: 20px 0;
+
+    }
+
+    .bbb {
+      background: #ddd;
+      color: #676767;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      display: inline-block;
+      padding: 10px;
+    }
+
+    .footer {
+      background: #333;
+      color: #fff;
+      text align: center;
+      padding: 10px 0;
+    }
+
+    .schedule {
+      background: var(--dark-color);
+      border: 1;
+      align: center;
+    }
+
+    .schedule-table {
+      display: table;
+      border: 0;
+      text-align: center;
+      border: 1;
+      align: center;
+    }
+
+    .schedule-table strong,
+    .schedule-table span {
+      display: block;
+      text-align: center;
+    }
+
+    .schedule-table strong {
+      color: var(--white-color);
+      align: center;
+    }
+
+    .schedule-table span {
+      color: var(--gray-color);
+      align: center;
+    }
+
+    .schedule-table span,
+    .schedule-table small {
+      font-size: var(--menu-font-size);
+      text-transform: uppercase;
+      align: center;
+    }
+
+
+    .schedule-table small {
+      position: relative;
+      top: 10px;
+      align: center;
+    }
+
+    .table .thead-light th,
+    .schedule-table tr td:first-child {
+      background: var(--primary-color);
+      border: 1px solid #212122;
+      color: var(--white-color);
+      align: center;
+    }
+
+    .schedule-table .thead-light th {
+      border-bottom: 0;
+      text-transform: uppercase;
+      align: center;
+    }
+
+    .table-bordered td,
+    .table-bordered th {
+      border: 1px solid #212122;
+      align: center;
+    }
+
+    .table-bordered td {
+      padding-bottom: 22px;
+      align: center;
+    }
+
+    .table td,
+    .table th {
+      padding: 1rem;
+      align: center;
+    }
+
+    .container {
+      margin-left: 5cm;
+    }
+  </style>
+</head>
+
+<body style=background:#cecece;>
+  <br><br><br><br><br>
+  <div class="aaa">
+    ELECTRONIC STATION
+  </div>
+
+  <div class="bbb">
+    <ul>
+      <li>
+        <h2><a href="home.html">Home</a></h2>
+      </li>
+      <li>
+        <h2> <a href="passenger.html">Passenger</a></h2>
+      </li>
+      <li>
+        <h2><a href="login.html">Admin</a> </h2>
+      </li>
+
+
+    </ul>
+  </div>
+  <h1>Passenger schedules</h1>
+
+  <div class="container">
+    <!-- SCHEDULE -->
+
+
+
+    <section class="schedule section" id="schedule">
+      <div class="container">
+        <div class="row">
+
+
+
+          <div class="col-lg-12 py-5 col-md-12 col-12">
+            <table class="table table-bordered table-responsive schedule-table" data-aos="fade-up" data-aos-delay="300">
+
+              <thead class="thead-light">
+                <th>passengerID</th>
+                <th>Date</th>
+                <th>time</th>
+                <th>Amount</th>
+                <th>Itinerary</th>
+                <th> payment</th>
+
+              </thead>
+
+              <tbody>
+              {% for trip in trips %}
+                <tr>
+                  <td>{{trip.id}}</td>
+                  <td> {{trip.date}}</td>
+                  <td>{{trip.train.arrival}}</td>
+                  <td>{{trip.mount}}</td>
+
+
+                  <td>{{trip.train.line}}</td>
+                  <td> <a href="Buy.html">pay</a> </td>
+                </tr>
+              {%endfor%}
+
+                <tr>
+                  <td>67899</td>
+                  <td> 4 april</td>
+                  <td>6:15</td>
+                  <td>150 SDG</td>
+
+                  <td> omdurman - bahri</td>
+                  <td> <a href="Buy.html">pay</a> </td>
+                </tr>
+                <tr>
+                  <td>56790</td>
+                  <td> 23 oct</td>
+                  <td>6:15</td>
+                  <td>150 SDG</td>
+
+                  <td> bahri - khurtoum</td>
+                  <td> <a href="Buy.html">pay</a> </td>
+                </tr>
+                <tr>
+                  <td>48267</td>
+                  <td> 4 june </td>
+                  <td>7 </td>
+                  <td>150 SDG</td>
+
+                  <td> khartoum - bahri</td>
+                  <td> <a href="Buy.html">pay</a> </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+</body>
+
+</html>
