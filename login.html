@@ -1,0 +1,318 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("A4.jpg");
+
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        .aaa {
+            background: #333;
+            color: #fff;
+            font-size: 20px;
+            padding: 20px 0;
+
+        }
+
+        .bbb {
+            background: #ddd;
+            color: #676767;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .footer {
+            background: #333;
+            color: #fff;
+            text align: center;
+            padding: 10px 0
+        }
+
+
+        h2 {
+            font-size: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: transparent;
+            box-shadow: 0 0 15px rgb(255, 255, 255);
+            border-radius: 15px;
+            width: 500px;
+            margin: 10vh auto;
+        }
+
+        form {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+        }
+
+        .form-item {
+            display: flex;
+            width: 90%;
+            background: transparent;
+            margin: 10px auto;
+            align-items: center;
+            border-radius: 15px;
+            border-bottom: 1px solid rgb(82, 81, 81);
+        }
+
+        .form-item:hover {
+            border: 1px solid rgb(82, 81, 81);
+            ;
+        }
+
+        input {
+            font-size: 18px;
+            width: 80%;
+            height: 30px;
+            outline: none;
+            background: transparent;
+            border: none;
+            margin: auto;
+            color: white;
+        }
+
+
+        span {
+            margin: 5px;
+            color: rgb(172, 172, 172);
+            cursor: default;
+            user-select: none;
+            background: rgba(85, 81, 81, 0.637);
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        button[type="submit"] {
+            width: 250px;
+            font-size: 20px;
+            margin: 10px auto;
+            padding: 10px 16px;
+            color: white;
+            background: rgba(122, 123, 116, 0.72);
+            border: none;
+            text-align: center;
+        }
+
+        button[type="submit"]:hover {
+            background: rgb(172, 134, 8);
+        }
+
+        p:first-of-type {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .options {
+            display: flex;
+            margin: 10px auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 5px 16px;
+            font-size: 18px;
+            margin: 5px 15px;
+            width: 180px;
+            color: white;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.7s ease;
+        }
+
+        .fb:hover {
+            background: rgb(5, 5, 73);
+            border: none;
+            box-shadow: 0 0 5px rgb(5, 5, 73);
+        }
+
+        .gl:hover {
+            background: rgb(73, 5, 5);
+            border: none;
+            box-shadow: 0 0 5px rgb(73, 5, 5);
+        }
+
+        p {
+            font-size: 18px;
+            margin: 5px;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: grey;
+        }
+        /* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10006;";
+}
+
+
+        @media screen and (max-width:550px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+
+</head>
+
+<body align="center" bgcolor=#ddd>
+    <div class="aaa">
+        ELECTRONIC STATION
+    </div>
+
+    <div class="bbb">
+        <ul>
+            <li>
+                <h2><a href="home.html">Home</a></h2>
+            </li>
+            <li>
+                <h2> <a href="passenger.html">Passenger</a></h2>
+            </li>
+            <li>
+                <h2><a href="login.html">Admin</a> </h2>
+            </li>
+
+
+        </ul>
+    </div>
+    <br><br><br>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="Train.html">
+            <label for="usrname">Username</label>
+            <input type="text" id="usrname" name="usrname" required>
+        
+            <label for="psw">Password</label>
+          <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        
+            <input type="submit" value="Submit">
+            
+          </form>
+           
+      <div id="message">
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      </div>
+    </div>
+
+</body>
+<script>
+    var myInput = document.getElementById("psw");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function() {
+      document.getElementById("message").style.display = "block";
+    }
+    
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function() {
+      document.getElementById("message").style.display = "none";
+    }
+    
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+      // Validate lowercase letters
+      var lowerCaseLetters = /[a-z]/g;
+      if(myInput.value.match(lowerCaseLetters)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+      } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+    }
+    
+      // Validate capital letters
+      var upperCaseLetters = /[A-Z]/g;
+      if(myInput.value.match(upperCaseLetters)) {
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+      } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+      }
+    
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+    
+      // Validate length
+      if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }
+    </script>
+</html>
